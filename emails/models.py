@@ -347,10 +347,10 @@ class Profile(models.Model):
         midnight_utc_today = datetime.combine(
             datetime.now(timezone.utc).date(), datetime.min.time()
         ).astimezone(timezone.utc)
-        midnight_utc_tomorow = midnight_utc_today + timedelta(days=1)
+        midnight_utc_tomorrow = midnight_utc_today + timedelta(days=1)
         abuse_metric = self.user.abusemetrics_set.filter(
             first_recorded__gte=midnight_utc_today,
-            first_recorded__lt=midnight_utc_tomorow,
+            first_recorded__lt=midnight_utc_tomorrow,
         ).first()
         if not abuse_metric:
             abuse_metric = AbuseMetrics.objects.create(user=self.user)
@@ -397,7 +397,7 @@ class Profile(models.Model):
         if datetime.now(timezone.utc) > account_premium_feature_resumed:
             # premium feature has been resumed
             return False
-        # user was flagged and the premiume feature pause period is not yet over
+        # user was flagged and the premium feature pause period is not yet over
         return True
 
 

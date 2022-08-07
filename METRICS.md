@@ -178,11 +178,11 @@ We collect data for the following events:
   * `eventAction` : submitted
   * `eventLabel` : The given answer
   * `value` : A numeric value representing the given answer
-  * `dimension3` : Whether the given answer respresents satisfaction, neutral feeling, or dissastisfaction.
+  * `dimension3` : Whether the given answer represents satisfaction, neutral feeling, or dissatisfaction.
   * `dimension4` : The given answer
   * `metric10` : Always "1" (to count the number of answers)
-  * `metric11` : A numeric value representing `dimenstion4`
-  * `metric12` : A numeric value representing `dimenstion3`
+  * `metric11` : A numeric value representing `dimension4`
+  * `metric12` : A numeric value representing `dimension3`
 
 - When an NPS survey answer is selected
   * `hitType` : event

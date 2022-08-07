@@ -124,7 +124,7 @@ class MiscEmailModelsTest(TestCase):
         assert address_hash(address, domain="firefox.com") == expected_hash
 
     @override_settings(RELAY_FIREFOX_DOMAIN="firefox.com")
-    def test_address_hash_without_subdomain_domain_not_firefoxz(self):
+    def test_address_hash_without_subdomain_domain_not_firefox(self):
         non_default = "test.com"
         address = "aaaaaaaaa"
         expected_hash = sha256(f"{address}@{non_default}".encode("utf-8")).hexdigest()
@@ -435,7 +435,7 @@ class ProfileTest(TestCase):
     def test_has_phone_default_False(self):
         assert self.profile.has_phone is False
 
-    def test_has_premium_with_unlimited_subsription_returns_True(self):
+    def test_has_premium_with_unlimited_subscription_returns_True(self):
         premium_user = baker.make(User)
         random_sub = random.choice(settings.SUBSCRIPTIONS_WITH_UNLIMITED.split(","))
         baker.make(
@@ -812,7 +812,7 @@ class ProfileTest(TestCase):
         profile = Profile.objects.get(user=user)
         assert profile.server_storage
 
-    def test_emails_replied_preimum_user_aggregates_sum_of_replies_from_all_addresses(
+    def test_emails_replied_premium_user_aggregates_sum_of_replies_from_all_addresses(
         self,
     ):
         subdomain = "test"
@@ -985,10 +985,10 @@ class DomainAddressTest(TestCase):
         assert domain_address.first_emailed_at is not None
 
     def test_make_domain_address_non_premium_user(self):
-        non_preimum_user_profile = baker.make(Profile)
+        non_premium_user_profile = baker.make(Profile)
         try:
             DomainAddress.make_domain_address(
-                non_preimum_user_profile, "test-non-premium"
+                non_premium_user_profile, "test-non-premium"
             )
         except CannotMakeAddressException as e:
             assert e.message == NOT_PREMIUM_USER_ERR_MSG.format(
@@ -1014,8 +1014,8 @@ class DomainAddressTest(TestCase):
         try:
             DomainAddress.make_domain_address(user_profile, "test-nosubdomain")
         except CannotMakeAddressException as e:
-            excpected_err_msg = "You must select a subdomain before creating email address with subdomain."
-            assert e.message == excpected_err_msg
+            expected_err_msg = "You must select a subdomain before creating email address with subdomain."
+            assert e.message == expected_err_msg
             return
         self.fail("Should have raise CannotMakeAddressException")
 

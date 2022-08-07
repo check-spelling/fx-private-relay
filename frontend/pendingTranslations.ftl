@@ -151,7 +151,7 @@ phone-onboarding-step3-input-placeholder = Enter 6-digit code
 phone-onboarding-step3-button-cta = Confirm my phone number
 phone-onboarding-step3-button-edit = Edit true phone number
 phone-onboarding-step3-button-resend = Resend verification code
-phone-onboarding-step3-error-exipred = Try again—the time limit expired.
+phone-onboarding-step3-error-expired = Try again—the time limit expired.
 phone-onboarding-step3-error-cta = Send me another code
 phone-onboarding-step3-code-fail-title = Wrong verification code
 phone-onboarding-step3-code-fail-body = Please try again or request a new code
@@ -164,12 +164,12 @@ phone-onboarding-step3-loading = Based on your true phone number, { -brand-name-
 
 phone-onboarding-step4-country-us = United States
 phone-onboarding-step4-body = These available phone number masks are similar to your true phone number. Once you register a phone number mask, you cannot change it. 
-phone-onboarding-step4-smiliar-phone = Similar to { $phone_number }
+phone-onboarding-step4-similar-phone = Similar to { $phone_number }
 phone-onboarding-step4-insput-search = Enter a city name or area code
 phone-onboarding-step4-button-more-options = Show me other options
 phone-onboarding-step4-button-register-phone-number = Register phone number mask
 phone-onboarding-step4-search-results-body = Phone number masks available in <strong>{ $location }</strong>. Once you register a phone number mask, you cannot change it.
-phone-onboarding-step4-confirm-message = To confirm your your phone number mask, enter it below. This can’t be changed later.
+phone-onboarding-step4-confirm-message = To confirm your phone number mask, enter it below. This can’t be changed later.
 phone-onboarding-step4-confirm-alt-cancel = Cancel 
 phone-onboarding-step4-confirm-input-placeholder = Confirm phone number mask
 phone-onboarding-step4-button-register-phone-number = Confirm number
@@ -237,7 +237,7 @@ trackerreport-tracker-count =
     }
 trackerreport-confidentiality-notice = Tracker information and from address shown in these reports are not saved by { -brand-name-firefox-relay } and only contained within report URLs. We do not save your emails.
 trackerreport-removal-explainer-heading = How tracker removal works
-# Note, at the time of writing, it's not actually possbile to enable tracker removal for individual masks.
+# Note, at the time of writing, it's not actually possible to enable tracker removal for individual masks.
 trackerreport-removal-explainer-content = { -brand-name-firefox-relay } can now remove common trackers from emails forwarded through your email masks. You’ll still receive your emails, but the trackers in your forwarded emails will be removed, so you can get your emails without being tracked. To enable tracker removal on all your masks at once, enable tracker removal in settings rather than individually for each mask.
 trackerreport-trackers-explainer-heading = About email trackers
 trackerreport-trackers-explainer-content-part1 = Email tracking is a common surveillance and advertising tool that has taken over many inboxes. These trackers can be used to understand more about your online behavior, your interests, and your email activity.
